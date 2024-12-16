@@ -1,19 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Your Content Title" />
-    <meta property="og:description" content="A brief description of your content." />
+    <title>Proohio - PRO Executor 2024</title>
+    <meta property="og:title" content="proohio executor" />
+    <meta property="og:description" content="The best executor for Roblox scripts, designed for performance and ease of use." />
     <meta property="og:image" content="https://raw.githubusercontent.com/proohio/proohio_cloud/main/PH.png" />
     <meta property="og:url" content="http://proohio.click" />
     <meta property="og:type" content="website" />
-</head>
-<body>
-    <h1>Welcome to Your Page</h1>
-    <p>Share this link on Discord to see the preview!</p>
-</body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="min-h-screen bg-black text-gray-300 flex flex-col">
+    <header class="border-b border-gray-800 sticky top-0 z-50 bg-black bg-opacity-90 backdrop-blur-sm">
+      <div class="container mx-auto px-4 py-2 flex items-center justify-between">
+        <div class="flex-shrink-0">
+          <img src="https://raw.githubusercontent.com/proohio/proohio_cloud/main/PH.png" alt="Proohio Logo" class="h-20 w-20">
+        </div>
+        <div class="hidden md:block text-center flex-grow mx-8">
+          <div class="animate-pulse">
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent"> ⚡ Free & Fast Executor ⚡ </h1>
+            <p class="text-gray-400 mt-1 animate-bounce">Simple and Easy to Use!</p>
+          </div>
+        </div>
+        <nav class="hidden md:block flex-shrink-0">
+          <ul class="flex space-x-6">
+            <li>
+              <button onclick="showTab('home')" class="hover:text-white transition-colors">Home</button>
+            </li>
+            <li>
+              <button onclick="showTab('credits')" class="hover:text-white transition-colors">Credits</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="flex-grow">
+      <div id="home" class="tab active py-20 text-center bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+          <h1 class="text-5xl font-bold mb-6 text-white">Proohio Executor</h1>
+          <p class="text-xl mb-8 text-gray-400">The best executor for Roblox scripts, designed for performance and ease of use.</p>
+          <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+              <i data-lucide="zap" class="h-16 w-16 mb-6 text-white mx-auto group-hover:scale-110 transition-transform duration-300"></i>
+              <h3 class="text-2xl font-semibold mb-4 text-white group-hover:text-gray-300">Fast Execution</h3>
+              <p class="text-gray-400 group-hover:text-gray-300">Lightning-fast script execution with minimal latency</p>
+            </div>
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+              <i data-lucide="shield" class="h-16 w-16 mb-6 text-white mx-auto group-hover:scale-110 transition-transform duration-300"></i>
+              <h3 class="text-2xl font-semibold mb-4 text-white group-hover:text-gray-300">Secure & Safe</h3>
+              <p class="text-gray-400 group-hover:text-gray-300">Advanced protection systems to keep you safe while gaming</p>
+            </div>
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+              <i data-lucide="code" class="h-16 w-16 mb-6 text-white mx-auto group-hover:scale-110 transition-transform duration-300"></i>
+              <h3 class="text-2xl font-semibold mb-4 text-white group-hover:text-gray-300">Script Library</h3>
+              <p class="text-gray-400 group-hover:text-gray-300">Access to a vast collection of ready-to-use scripts</p>
+            </div>
+          </div>
+          <button onclick="window.open('https://github.com/proohio/proohio_cloud/raw/refs/heads/main/proohio.zip')" class="mt-8 bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-full text-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+            <i data-lucide="download" class="inline mr-2"></i> Download Executor </button>
+        </div>
+      </div>
+      <div id="credits" class="tab hidden py-20 text-center bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold mb-12 text-white">Meet Our Team</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+              <i data-lucide="code" class="h-16 w-16 mb-6 text-white mx-auto group-hover:scale-110 transition-transform duration-300"></i>
+              <h3 class="text-2xl font-semibold mb-2 text-white">Frontend Developer</h3>
+              <p class="text-gray-400">Proohio</p>
+              <p class="text-sm text-gray-500 mt-2">WPF .NET Application Development</p>
+            </div>
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+              <i data-lucide="database" class="h-16 w-16 mb-6 text-white mx-auto group-hover:scale-110 transition-transform duration-300"></i>
+              <h3 class="text-2xl font-semibold mb-2 text-white">Backend Developer</h3>
+              <p class="text-gray-400">Proohio</p>
+              <p class="text-sm text-gray-500 mt-2">C# .NET Backend Development</p>
+            </div>
+            <div class="bg-black bg-opacity-50 p-8 rounded-lg border border-gray-800 hover:border-gray-600 transition-all duration-300 group">
+              <i data-lucide="server" class="h-16 w-16 mb-6 text-white mx-auto group-hover:scale-110 transition-transform duration-300"></i>
+              <h3 class="text-2xl font-semibold mb-2 text-white">API Provider</h3>
+              <p class="text-gray-400">forlorn api | PRO</p>
+              <p class="text-sm text-gray-500 mt-2">Executor API</p>
+            </div>
+          </div>
+          <div class="mt-16 text-center">
+            <h3 class="text-2xl font-semibold mb-6 text-white">Special Thanks</h3>
+            <p class="text-gray-400">To our amazing community for their continued support and feedback.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="border-t border-gray-800 py-8 bg-black">
+      <div class="container mx-auto px-4 text-center text-gray-400">
+        <p>&copy; 2024 Proohio. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      lucide.createIcons();
+
+      function showTab(tabName) {
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+          tab.classList.add('hidden');
+          tab.classList.remove('active');
+        });
+        const selectedTab = document.getElementById(tabName);
+        selectedTab.classList.remove('hidden');
+        selectedTab.classList.add('active');
+      }
+    </script>
+  </body>
 </html>
