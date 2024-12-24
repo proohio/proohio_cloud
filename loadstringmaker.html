@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loadstring Maker by proohio</title>
+    <title>Loadstring Maker</title>
     <style>
         body {
             margin: 0;
@@ -14,6 +14,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
         }
         .container {
             max-width: 600px;
@@ -22,6 +23,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
         }
         .container h1 {
             font-size: 24px;
@@ -46,18 +48,29 @@
             background: #1e1e1e;
             color: #f0f0f0;
             outline: none;
+            transition: border-color 0.2s;
         }
         .input-group input:focus {
             border-color: #5758ff;
         }
+        .output-container {
+            margin-top: 20px;
+        }
         .output {
-            margin-top: 15px;
+            margin-top: 10px;
             padding: 10px;
             border: 1px solid #444444;
             border-radius: 4px;
             background: #1e1e1e;
             color: #f0f0f0;
             font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
         }
         .button {
             background: #5758ff;
@@ -68,38 +81,68 @@
             cursor: pointer;
             font-size: 14px;
             transition: background 0.2s;
+            flex: 1;
         }
         .button:hover {
             background: #6a6bff;
         }
-        .output-container {
-            margin-top: 20px;
+        .button:disabled {
+            background: #444444;
+            cursor: not-allowed;
+        }
+        .credits {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #cccccc;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Loadstring Maker by proohio</h1>
+        <h1>Loadstring Maker</h1>
         <div class="input-group">
             <label for="urlInput">Enter URL:</label>
             <input type="text" id="urlInput" placeholder="Enter the script URL here...">
         </div>
         <button class="button" onclick="generateLoadstring()">Generate</button>
-        <div class="output-container">
+        <div id="outputContainer" class="output-container" style="display: none;">
             <h3>Generated Loadstring:</h3>
             <div id="output" class="output"></div>
+            <div class="buttons">
+                <button class="button" onclick="copyToClipboard()">Copy</button>
+                <button class="button" onclick="resetLoadstring()">New Loadstring</button>
+            </div>
         </div>
+    </div>
+    <div class="credits">
+        Made with ❤️ by <strong>Proohio</strong>
     </div>
     <script>
         function generateLoadstring() {
             const urlInput = document.getElementById("urlInput").value.trim();
+            const outputContainer = document.getElementById("outputContainer");
             const output = document.getElementById("output");
 
             if (urlInput) {
                 output.textContent = `loadstring(game:HttpGet("${urlInput}"))()`;
+                outputContainer.style.display = "block";
             } else {
-                output.textContent = "Please enter a valid URL!";
+                alert("Please enter a valid URL!");
             }
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById("output").textContent;
+            navigator.clipboard.writeText(output).then(() => {
+                alert("Loadstring copied to clipboard!");
+            }).catch(err => {
+                alert("Failed to copy. Try again.");
+            });
+        }
+
+        function resetLoadstring() {
+            document.getElementById("urlInput").value = "";
+            document.getElementById("outputContainer").style.display = "none";
         }
     </script>
 </body>
