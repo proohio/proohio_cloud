@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/gFhs2GWJxe",
+      "permanent": true
+    }
+  ]
+}
